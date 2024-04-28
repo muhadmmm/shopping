@@ -1,0 +1,109 @@
+<!-- index.html (Owner Upload Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="file"],
+        input[type="text"],
+        input[type="number"],
+        button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .card .card-body {
+            padding: 10px;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .card p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Image</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <div class="card" id="uploadPreview" style="display: none;">
+            <img id="previewImage" src="" alt="Preview">
+            <div class="card-body">
+                <h2 id="previewCaption"></h2>
+                <p id="previewPrice"></p>
+            </div>
+            <button id="confirmUpload">OK</button>
+        </div>
+        <input type="file" name="image" id="image" onchange="previewImage(event)">
+        <input type="text" name="caption" id="caption" placeholder="Caption">
+        <input type="number" name="price" id="price" placeholder="Price">
+        <button type="submit">Upload</button>
+    </form>
+
+    <script src="upload.js"></script>
+</body>
+</html>
